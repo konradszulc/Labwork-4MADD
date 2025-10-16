@@ -1,4 +1,3 @@
-/* Konrad will do this */
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 
