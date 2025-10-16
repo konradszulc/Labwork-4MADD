@@ -29,3 +29,6 @@ yarn-error.log*
 
 # Optional eslint cache
 .eslintcache
+
+# Added App.tsx to be ignored because we will work on it as a team
+src/App.tsx
