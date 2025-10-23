@@ -49,7 +49,7 @@ const Registration: React.FC = () => {
                 </IonItem>
 
                 <br /><br />
-                
+
                 <IonButton expand="full" onClick={registerComplete}>Submit</IonButton>
                 
                 <IonToast isOpen={isOpen} message="User Created Succesfully"
