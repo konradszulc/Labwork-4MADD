@@ -2,12 +2,13 @@ import { initializeApp } from "firebase/app"
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBw-X9k1FxEgu8qKEZaj-JnnsEvLl78wMY",
-    authDomain: "lab4-auth-team4.firebaseapp.com",
-    projectId: "lab4-auth-team4",
-    storageBucket: "lab4-auth-team4.firebasestorage.app",
-    messagingSenderId: "627453371435",
-    appId: "1:627453371435:web:b4cfa344c0233381d6b66e"
+    //using .env to hide public API
+    apiKey: import.meta.env.VITE_apiKey,
+    authDomain: import.meta.env.VITE_authDomain,
+    projectId: import.meta.env.VITE_projectId,
+    storageBucket: import.meta.env.VITE_storageBucket,
+    messagingSenderId: import.meta.env.VITE_messagingSenderId,
+    appId: import.meta.env.VITE_appId
 };
 
 const app = initializeApp(firebaseConfig)
