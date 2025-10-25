@@ -1,12 +1,15 @@
 import { IonButton, IonContent, IonHeader, IonInput, IonItem, IonPage, IonTitle, IonToast, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
 import { registerUser } from '../firebaseConfig'
+import { Redirect } from "react-router-dom"; // For redirecting after registration
+
 
 const Registration: React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [conPassword, setConPassword] = useState('');
     const [isOpen, setIsOpen] = useState(false);
+    const [redirectToLogin, setRedirectToLogin] = useState(false); // Track redirect
 
     async function registerComplete() {
         //error with match, due to slow useState render
@@ -25,9 +28,16 @@ const Registration: React.FC = () => {
         const resolution = await registerUser(email, password)
         if (resolution) {
             setIsOpen(true)
+
+            setTimeout(() => {
+                setRedirectToLogin(true);
+            }, 1000);
         }
     }
 
+    if (redirectToLogin) {
+        return <Redirect to="/Login" />; // Conditional redirecting
+    }
     return (
         <IonPage>
             <IonHeader>
@@ -36,6 +46,7 @@ const Registration: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent className="ion-padding">
+                
                 <IonItem>
                     <IonInput placeholder="Enter Email" onIonChange={(e) => setEmail(e.detail.value!)}></IonInput>
                 </IonItem>
@@ -47,11 +58,11 @@ const Registration: React.FC = () => {
                 <IonItem>
                     <IonInput type="password" placeholder="Confirm Password" onIonChange={(e) => setConPassword(e.detail.value!)}></IonInput>
                 </IonItem>
+                <p>Already have an Account? <a href = "/Login">Click here</a> to Login</p>
+                <br />
 
-                <br /><br />
+                <IonButton expand="block" onClick={registerComplete}>Submit</IonButton>
 
-                <IonButton expand="full" onClick={registerComplete}>Submit</IonButton>
-                
                 <IonToast isOpen={isOpen} message="User Created Succesfully"
                     onDidDismiss={() => setIsOpen(false)}
                     duration={5000}></IonToast>

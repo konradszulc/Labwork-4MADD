@@ -1,4 +1,4 @@
-import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonMenuButton, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonCol, IonContent, IonGrid, IonHeader,IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import './Home.css';
 import React from 'react';
 
@@ -8,9 +8,6 @@ const Home: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonButtons slot="start">
-            <IonMenuButton></IonMenuButton>
-          </IonButtons>
           <IonTitle>Welcome to Coding Snippets</IonTitle>
         </IonToolbar>
       </IonHeader>

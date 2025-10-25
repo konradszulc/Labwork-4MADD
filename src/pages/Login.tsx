@@ -1,12 +1,13 @@
 import { IonButton, IonContent, IonHeader, IonInput, IonItem, IonPage, IonTitle, IonToast, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
 import { loginUser } from '../firebaseConfig';
+import { Redirect } from "react-router-dom"; // For conditional navigation - only after uer is logged in
 
 const Login: React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isOpen, setIsOpen] = useState(false);
-
+    const [loggedIn, setLoggedIn] = useState(false);
 
     async function loginComplete() {
         //Checking requirements are met
@@ -18,8 +19,16 @@ const Login: React.FC = () => {
         const resolution = await loginUser(email, password)
         if (resolution) {
             setIsOpen(true)
+
+            setTimeout(() => {
+                setLoggedIn(true); // This triggers <Redirect> below
+            }, 1000); // 1 second delay
         }
     }
+
+    if (loggedIn) {
+    return <Redirect to="/LandingPage" />; // Conditional navigation
+  }
     return (
         <IonPage>
             <IonHeader>
@@ -28,6 +37,7 @@ const Login: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent className="ion-padding">
+                
                 <IonItem>
                     <IonInput placeholder="Enter Email" onIonChange={(e) => setEmail(e.detail.value!)}></IonInput>
                 </IonItem>
@@ -35,8 +45,9 @@ const Login: React.FC = () => {
                 <IonItem>
                     <IonInput type="password" placeholder="Enter Password" onIonChange={(e) => setPassword(e.detail.value!)}></IonInput>
                 </IonItem>
-                <br /><br />
-                <IonButton expand = "full" onClick={loginComplete}>Submit</IonButton>
+                <p>Don't have an Account? <a href = "/Registration">Click here</a> to Register</p>
+                <br />
+                <IonButton expand="block" onClick={loginComplete}>Submit</IonButton>
                 <IonToast isOpen={isOpen} message="Succesfully logged in"
                     onDidDismiss={() => setIsOpen(false)}
                     duration={5000}>

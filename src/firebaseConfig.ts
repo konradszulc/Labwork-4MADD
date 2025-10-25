@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app"
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth"
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
     //using .env to hide public API
@@ -13,9 +14,10 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)
+const db = getFirestore(app);
 
-export async function loginUser (email: string, password: string) {
-    
+export async function loginUser(email: string, password: string) {
+
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password)
         const user = userCredential.user;
@@ -38,7 +40,7 @@ export async function registerUser(email: string, password: string) {
         console.log("User Registered: ", user);
         return true;
 
-    } catch(error: any) {
+    } catch (error: any) {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.error(errorCode, errorMessage);
@@ -46,3 +48,20 @@ export async function registerUser(email: string, password: string) {
         return false;
     }
 };
+
+
+export async function userSignOut(){
+    try{
+        await signOut(auth)
+        return true;
+
+    } catch (error: any) {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error(errorCode, errorMessage);
+        alert(errorMessage)
+        return false;
+    }
+    
+}
+export { db };
