@@ -67,6 +67,8 @@ const App: React.FC = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setEmail(user.email);
+      } else {
+        setEmail("No User Signed In");
       }
     });
   });
