@@ -43,8 +43,8 @@ const Registration: React.FC = () => {
         <IonPage>
             <IonHeader>
                 <IonToolbar>
-                    <IonButtons className='back-button' slot='start'>
-                        <IonBackButton defaultHref='/Home'></IonBackButton>
+                    <IonButtons slot='start'>
+                        <IonBackButton className='back-button' defaultHref='/Home'></IonBackButton>
                     </IonButtons>
                     <IonTitle className='registration'>Register</IonTitle>
                 </IonToolbar>
