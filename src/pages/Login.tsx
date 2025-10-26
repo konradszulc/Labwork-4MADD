@@ -35,7 +35,7 @@ const Login: React.FC = () => {
             <IonHeader>
                 <IonToolbar>
                     <IonButtons slot = 'start'>
-                        <IonBackButton defaultHref = '/Home'></IonBackButton>
+                        <IonBackButton className='back-button' defaultHref = '/Home'></IonBackButton>
                     </IonButtons>
                     <IonTitle className='login'>Login</IonTitle>
                 </IonToolbar>

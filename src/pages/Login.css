@@ -59,3 +59,8 @@ max-width: 150px;
 display: block;
 margin: auto;
 }
+
+.back-button {
+    color: #FFD300;
+    margin-left: 20px;          
+}

@@ -43,3 +43,8 @@ margin: auto;
   display: block;
   margin: 0 auto;
 }
+
+.back-button {
+    color: #FFD300;
+    margin-left: 20px;          
+}
