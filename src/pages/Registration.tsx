@@ -1,4 +1,4 @@
-import { IonButton, IonContent, IonHeader, IonInput, IonItem, IonPage, IonTitle, IonToast, IonToolbar } from '@ionic/react';
+import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonInput, IonItem, IonPage, IonTitle, IonToast, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
 import { registerUser } from '../firebaseConfig'
 import { Redirect } from "react-router-dom"; // For redirecting after registration
@@ -43,11 +43,14 @@ const Registration: React.FC = () => {
         <IonPage>
             <IonHeader>
                 <IonToolbar>
+                    <IonButtons slot='start'>
+                        <IonBackButton defaultHref='/Home'></IonBackButton>
+                    </IonButtons>
                     <IonTitle className='registration'>Registration</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent className="ion-padding">
-                
+
                 <IonItem className='placeholder'>
                     <IonInput placeholder="Enter Email" onIonChange={(e) => setEmail(e.detail.value!)}></IonInput>
                 </IonItem>
@@ -59,7 +62,7 @@ const Registration: React.FC = () => {
                 <IonItem className='placeholder'>
                     <IonInput type="password" placeholder="Confirm Password" onIonChange={(e) => setConPassword(e.detail.value!)}></IonInput>
                 </IonItem>
-                <p className='register-account'>Already have an Account? <a href = "/Login">Click here</a> to Login</p>
+                <p className='register-account'>Already have an Account? <a href="/Login">Click here</a> to Login</p>
 
                 <IonButton className='submit hover' expand="block" onClick={registerComplete}>Submit</IonButton>
 

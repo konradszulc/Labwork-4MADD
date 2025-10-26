@@ -1,4 +1,4 @@
-import { IonButton, IonContent, IonHeader, IonInput, IonItem, IonPage, IonTitle, IonToast, IonToolbar } from '@ionic/react';
+import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonInput, IonItem, IonPage, IonTitle, IonToast, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
 import { loginUser } from '../firebaseConfig';
 import { Redirect } from "react-router-dom"; // For conditional navigation - only after uer is logged in
@@ -34,6 +34,9 @@ const Login: React.FC = () => {
         <IonPage>
             <IonHeader>
                 <IonToolbar>
+                    <IonButtons slot = 'start'>
+                        <IonBackButton defaultHref = '/Home'></IonBackButton>
+                    </IonButtons>
                     <IonTitle className='login'>Login</IonTitle>
                 </IonToolbar>
             </IonHeader>
