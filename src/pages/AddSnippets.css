@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap');
+
+.snippet {
+    font-family: 'Montserrat', "Segoe UI", Roboto, Arial, sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 0.2em;    /* reduce from 0.6em */
+    color: #FFD300;
+    padding: 1rem 1rem 1rem 0;
+    margin-left: 0;
+    width: 100%;
+    text-align: center;              
+}
+
+.nav {
+    color: #FFD300;
+}
+
+.placeholder {
+  max-width: 60%;
+  display: block;
+  margin: 0 auto;
+}
+
+.hover {
+  margin-left: 0;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.hover:hover {
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.submit {
+padding-top: 20px;
+width: auto;
+max-width: 150px;
+display: block;
+margin: auto;
+}

@@ -15,6 +15,7 @@ import {
 } from "@ionic/react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebaseConfig";
+import './AddSnippets.css'; // CSS link to AddSnippets.tsx -LK
 
 const AddSnippet: React.FC = () => {
     const [title, setTitle] = useState("");
@@ -47,16 +48,16 @@ const AddSnippet: React.FC = () => {
         <IonPage>
             <IonHeader>
                 <IonToolbar>
-                    <IonButtons slot="start">
+                    <IonButtons className='nav' slot="start">
                         <IonMenuButton></IonMenuButton>
                     </IonButtons>
-                    <IonTitle>Add Snippet</IonTitle>
+                    <IonTitle className='snippet'>Add Snippet</IonTitle>
                 </IonToolbar>
             </IonHeader>
 
             <IonContent className="ion-padding">
-                <IonItem>
-                    <IonLabel position="stacked">Title</IonLabel>
+                <IonItem className='placeholder'>
+                    <IonLabel position="stacked">TITLE</IonLabel>
                     <IonInput
                         value={title}
                         placeholder="Enter title"
@@ -64,8 +65,8 @@ const AddSnippet: React.FC = () => {
                     />
                 </IonItem>
 
-                <IonItem>
-                    <IonLabel position="stacked">Code</IonLabel>
+                <IonItem className='placeholder'>
+                    <IonLabel position="stacked">CODE</IonLabel>
                     <IonTextarea
                         value={code}
                         placeholder="Paste your code here"
@@ -74,8 +75,8 @@ const AddSnippet: React.FC = () => {
                     />
                 </IonItem>
 
-                <IonItem>
-                    <IonLabel position="stacked">Explanation</IonLabel>
+                <IonItem className='placeholder'>
+                    <IonLabel position="stacked">EXPLANATION</IonLabel>
                     <IonTextarea
                         value={explanation}
                         placeholder="Write an explanation (optional)"
@@ -84,7 +85,7 @@ const AddSnippet: React.FC = () => {
                     />
                 </IonItem>
 
-                <IonButton expand="block" onClick={handleSave}>
+                <IonButton className='hover submit' expand="block" onClick={handleSave}>
                     Save Snippet
                 </IonButton>
             </IonContent>

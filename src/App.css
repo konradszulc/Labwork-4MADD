@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap');
+
+.app-title {
+ font-family: 'Montserrat', "Segoe UI", Roboto, Arial, sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    color: #FFD300;
+    text-transform: uppercase;
+    margin-left: 0;
+    width: 100%;               
+    text-align: center;
+}
+
+.icon {
+    color: #FFD300;
+}
+
+.email {
+  color: #6b7280 !important; /* This makes the email in the Snippet Menu to appear muted gray color */
+}
+
+.menu-button {
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.menu-button:hover {
+  color: #FFD300;         /* Soft yellow accent */
+}
+
+.submit {
+padding-top: 20px;
+width: auto;
+max-width: 150px;
+display: block;
+margin: auto;
+}

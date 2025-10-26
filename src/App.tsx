@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Registration from './pages/Registration';
 import { closeOutline, personCircleOutline } from 'ionicons/icons';
 import { userSignOut } from './firebaseConfig';
+import './App.css'; // CSS link to Home.tsx -LK
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -35,6 +36,7 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import '@ionic/react/css/palettes/dark.always.css'; // Added dark theme -LK
 import Login from './pages/Login';
 import LandingPage from './pages/LandingPage';
 import AddSnippets from './pages/AddSnippets';
@@ -80,7 +82,7 @@ const App: React.FC = () => {
         <IonMenu contentId="main-pages">
           <IonHeader>
             <IonToolbar>
-              <IonTitle>Snippet List Menu</IonTitle>
+              <IonTitle className='app-title'>Snippet Menu</IonTitle>
               <IonButtons slot="end">
                 <IonMenuToggle autoHide>
                   <IonButton>
@@ -93,17 +95,17 @@ const App: React.FC = () => {
           <IonContent>
             <IonList>
               <IonItem lines="none">
-                <IonLabel>{email}</IonLabel>
-                <IonIcon icon={personCircleOutline} slot="end" size="large"></IonIcon>
+                <IonLabel className='email'>{email}</IonLabel>
+                <IonIcon className='icon' icon={personCircleOutline} slot="end" size="large"></IonIcon>
               </IonItem>
               <IonMenuToggle autoHide>
                 <IonItem button routerLink="/LandingPage">
-                  <IonLabel>My Code Snippets</IonLabel>
+                  <IonLabel className='menu-button'>My Code Snippets</IonLabel>
                 </IonItem>
                 <IonItem button routerLink="/AddSnippets" lines = "none">
-                  <IonLabel>Add Snippets</IonLabel>
+                  <IonLabel className='menu-button'>Add Snippets</IonLabel>
                 </IonItem>
-                <IonButton expand="block" onClick={signedOut}>Sign Out</IonButton>
+                <IonButton className='submit hover' expand="block" onClick={signedOut}>Sign Out</IonButton>
               </IonMenuToggle>
             </IonList>
             <IonToast isOpen={isOpen} message="Signed Out"

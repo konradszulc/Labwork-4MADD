@@ -19,6 +19,7 @@ import {
 import { addOutline } from "ionicons/icons";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebaseConfig";
+import './LandingPage.css'; // Linking to Login.css -LK
 
 interface Snippet {
     id?: string;
@@ -49,10 +50,10 @@ const LandingPage: React.FC = () => {
         <IonPage>
             <IonHeader>
                 <IonToolbar>
-                    <IonButtons slot = "start">
+                    <IonButtons className='nav' slot = "start">
                         <IonMenuButton></IonMenuButton>
                     </IonButtons>
-                    <IonTitle>My Code Snippets</IonTitle>
+                    <IonTitle className="landing-title">My Code Snippets</IonTitle>
                 </IonToolbar>
             </IonHeader>
 
@@ -64,18 +65,18 @@ const LandingPage: React.FC = () => {
                         {snippets.map((snippet) => (
                             <IonCard key={snippet.id}>
                                 <IonCardHeader>
-                                    <IonCardTitle>{snippet.title}</IonCardTitle>
+                                    <IonCardTitle className="snippet-title">{snippet.title}</IonCardTitle>
                                 </IonCardHeader>
                                 <IonCardContent>
-                                    <pre>{snippet.code}</pre>
-                                    <p>{snippet.explanation}</p>
+                                    <pre className="snippet-code">{snippet.code}</pre>
+                                    <p className="snippet-exp">{snippet.explanation}</p>
                                 </IonCardContent>
                             </IonCard>
                         ))}
                     </IonList>
                 )}
 
-                <IonFab vertical="bottom" horizontal="end" slot="fixed">
+                <IonFab className="plus-button click" vertical="bottom" horizontal="end" slot="fixed">
                     <IonButton shape="round" size="large" routerLink="/AddSnippets">
                         <IonIcon slot="icon-only" icon={addOutline} />
                     </IonButton>

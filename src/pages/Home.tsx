@@ -1,5 +1,5 @@
 import { IonButton, IonCol, IonContent, IonGrid, IonHeader,IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import './Home.css';
+import './Home.css'; // CSS link to Home.tsx -LK
 import React from 'react';
 
 
@@ -8,16 +8,19 @@ const Home: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Welcome to Coding Snippets</IonTitle>
+          <IonTitle className='title centered-content'>
+            <p className='welcome'>Welcome to</p>
+            CodAtlas</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="ion-padding">
+      <IonContent className='ion-padding'>
         <IonGrid>
-          <IonRow className="ion-justify-content-center">
-            <IonCol size="3">
-              <IonButton routerLink="/Registration">Register Now</IonButton>
-              <p>Already have an account? Click below to go to login</p>
-              <IonButton routerLink="/Login">Login</IonButton>
+          <IonRow>
+            <IonCol size="12">
+              <IonButton className='hover submit' routerLink="/Registration">Register Now</IonButton>
+              <p className='font1'>Already have an account?</p>
+              <p className='font2'>Click below to go to login</p>
+              <IonButton className='hover submit' routerLink="/Login">Login</IonButton>
             </IonCol>
           </IonRow>
         </IonGrid>

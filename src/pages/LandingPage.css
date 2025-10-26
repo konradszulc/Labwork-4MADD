@@ -1,0 +1,74 @@
+.landing-title {
+    font-family: 'Montserrat', "Segoe UI", Roboto, Arial, sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 0.2em;    /* reduce from 0.6em */
+    color: #FFD300;
+    padding: 1rem 1rem 1rem 0;
+    margin-left: 0;
+    width: 100%;
+    text-align: center;              
+}
+
+.nav {
+    color: #FFD300;
+}
+
+.plus-button { /*This needs to be used for moving of the button to the right place. It does not work in selector below. */
+    margin-right: 40px;
+    margin-bottom: 35px;
+    color: #FFD300;
+}
+
+.plus-button ion-icon {
+  transition: color 150ms ease, transform 120ms ease;
+}
+
+.plus-button:hover,
+.plus-button:hover ion-icon {
+  color: #FFD300;     /* yellow */
+  --color: #FFD300;   /* ensure Ionic components pick up the color */
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.snippet-title {
+  margin-left: 1rem;
+  width: 100%;
+  font-size: 0.95rem;
+  color: #FFD300; /* muted gray */
+  line-height: 1.3;
+  padding-top: 20px;
+  border-bottom: white;
+}
+
+.snippet-code {
+  margin-left: 1rem;
+  width: 100%;
+  font-size: 0.95rem;
+  color: white; /* muted gray */
+  line-height: 1.3;
+  padding-top: 20px;
+}
+
+.snippet-exp {
+  margin-left: 1rem;
+  width: 100%;
+  font-size: 0.95rem;
+  color: #6b7280; /* muted gray */
+  line-height: 1.3;
+  padding-top: 20px;
+  padding-bottom: 20px; /* Adds spacing after the explanation */
+  position: relative;
+}
+
+.snippet-exp::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  opacity: 0.1;
+}

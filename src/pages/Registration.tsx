@@ -2,6 +2,7 @@ import { IonButton, IonContent, IonHeader, IonInput, IonItem, IonPage, IonTitle,
 import React, { useState } from 'react';
 import { registerUser } from '../firebaseConfig'
 import { Redirect } from "react-router-dom"; // For redirecting after registration
+import './Registration.css'; // Linking to Registration.css -LK
 
 
 const Registration: React.FC = () => {
@@ -42,26 +43,25 @@ const Registration: React.FC = () => {
         <IonPage>
             <IonHeader>
                 <IonToolbar>
-                    <IonTitle>Registration</IonTitle>
+                    <IonTitle className='registration'>Registration</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent className="ion-padding">
                 
-                <IonItem>
+                <IonItem className='placeholder'>
                     <IonInput placeholder="Enter Email" onIonChange={(e) => setEmail(e.detail.value!)}></IonInput>
                 </IonItem>
 
-                <IonItem>
+                <IonItem className='placeholder'>
                     <IonInput type="password" placeholder="Enter Password" onIonChange={(e) => setPassword(e.detail.value!)}></IonInput>
                 </IonItem>
 
-                <IonItem>
+                <IonItem className='placeholder'>
                     <IonInput type="password" placeholder="Confirm Password" onIonChange={(e) => setConPassword(e.detail.value!)}></IonInput>
                 </IonItem>
-                <p>Already have an Account? <a href = "/Login">Click here</a> to Login</p>
-                <br />
+                <p className='register-account'>Already have an Account? <a href = "/Login">Click here</a> to Login</p>
 
-                <IonButton expand="block" onClick={registerComplete}>Submit</IonButton>
+                <IonButton className='submit hover' expand="block" onClick={registerComplete}>Submit</IonButton>
 
                 <IonToast isOpen={isOpen} message="User Created Succesfully"
                     onDidDismiss={() => setIsOpen(false)}
