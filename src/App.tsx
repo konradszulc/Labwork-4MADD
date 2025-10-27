@@ -70,10 +70,10 @@ const App: React.FC = () => {
       if (user) {
         setEmail(user.email);
       } else {
-        setEmail("No User Signed In");
+        setEmail(null);
       }
     });
-  });
+  }, [auth]);
 
 
   return (
@@ -95,17 +95,22 @@ const App: React.FC = () => {
           <IonContent>
             <IonList>
               <IonItem lines="none">
-                <IonLabel className='email'>{email}</IonLabel>
+                <IonLabel className='email'>{email || "No User Logged In"}</IonLabel>
                 <IonIcon className='icon' icon={personCircleOutline} slot="end" size="large"></IonIcon>
               </IonItem>
               <IonMenuToggle autoHide>
                 <IonItem button routerLink="/LandingPage">
                   <IonLabel className='menu-button'>My Code Snippets</IonLabel>
                 </IonItem>
-                <IonItem button routerLink="/AddSnippets" lines = "none">
+                <IonItem button routerLink="/AddSnippets" lines="none">
                   <IonLabel className='menu-button'>Add Snippets</IonLabel>
                 </IonItem>
-                <IonButton className='submit hover' expand="block" onClick={signedOut}>Sign Out</IonButton>
+                {email !== null && (
+                  <IonButton className='submit hover' expand="block" onClick={signedOut}>Sign Out</IonButton>
+                )}
+                {email == null && (
+                  <IonButton className='submit hover' expand="block" routerLink="/Login">Sign in</IonButton>
+                )}
               </IonMenuToggle>
             </IonList>
             <IonToast isOpen={isOpen} message="Signed Out"
