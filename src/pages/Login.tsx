@@ -1,7 +1,7 @@
 import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonInput, IonItem, IonPage, IonTitle, IonToast, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
 import { loginUser } from '../firebaseConfig';
-import { Redirect } from "react-router-dom"; // For conditional navigation - only after uer is logged in
+import { Link, Redirect } from "react-router-dom"; // For conditional navigation - only after uer is logged in
 import './Login.css'; // Linking to Login.css -LK
 
 const Login: React.FC = () => {
@@ -48,7 +48,7 @@ const Login: React.FC = () => {
                 <IonItem className='placeholder'>
                     <IonInput type="password" placeholder="Enter Password" onIonChange={(e) => setPassword(e.detail.value!)}></IonInput>
                 </IonItem>
-                <p className='account'>Don't have an Account?<a href = "/Registration">Click here</a> to Register</p>
+                <p className='account'>Don't have an Account? <Link to = {`registration`}>Click here</Link> to Register</p>
                 <IonButton className='hover submit' expand="block" onClick={loginComplete}>Submit</IonButton>
                 <IonToast isOpen={isOpen} message="Succesfully logged in"
                     onDidDismiss={() => setIsOpen(false)}
