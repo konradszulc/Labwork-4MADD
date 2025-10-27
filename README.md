@@ -12,6 +12,6 @@ After Cloning GitHub Repo:
 
 3. Upload .env provided by Team 4 to utilize specific Firebase (has example code snippets and some authenticated users)
 
-4. Register own account or Login with Email: Password:
+4. Register own account or Login with example user Email: maddwork@gmail.com Password: MaddStuff1000%
 
 NOTE: .env contains public ApiKey and uID information, This was not pushed to GitHub repo as a safety net. This is considered good practice, and even GitHub scans/alerts users if such information is present in public repos. The .env has variables named that correlate with the variables in firebaseConfig.ts, for the file to grab the right credentials.
