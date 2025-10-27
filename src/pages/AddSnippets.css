@@ -17,7 +17,7 @@
 }
 
 .placeholder {
-  max-width: 60%;
+  max-width: 80%;
   display: block;
   margin: 0 auto;
 }
@@ -43,4 +43,8 @@ width: auto;
 max-width: 150px;
 display: block;
 margin: auto;
+}
+
+.placeholder-padding {
+  padding-top: 200px;
 }

@@ -8,6 +8,7 @@ const Home: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
+          <div className='title-padding'></div>
           <IonTitle className='title centered-content'>
             <p className='welcome'>Welcome to</p>
             CodAtlas</IonTitle>
@@ -17,7 +18,8 @@ const Home: React.FC = () => {
         <IonGrid>
           <IonRow>
             <IonCol size="12">
-              <IonButton className='hover submit' routerLink="/Registration">Register Now</IonButton>
+              <div className='register-padding'></div>
+              <IonButton className='hover submit' routerLink="/Registration">Register</IonButton>
               <p className='font1'>Already have an account?</p>
               <p className='font2'>Click below to go to login</p>
               <IonButton className='hover submit' routerLink="/Login">Login</IonButton>

@@ -41,7 +41,7 @@ const Login: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent className="ion-padding">
-                
+                <div className='placeholder-padding'></div>
                 <IonItem className='placeholder'>
                     <IonInput placeholder="Enter Email" onIonChange={(e) => setEmail(e.detail.value!)}></IonInput>
                 </IonItem>
@@ -49,7 +49,7 @@ const Login: React.FC = () => {
                     <IonInput type="password" placeholder="Enter Password" onIonChange={(e) => setPassword(e.detail.value!)}></IonInput>
                 </IonItem>
                 <p className='account'>Don't have an Account? <Link to = {`registration`}>Click here</Link> to Register</p>
-                <IonButton className='hover submit' expand="block" onClick={loginComplete}>Submit</IonButton>
+                <IonButton className='hover submit' expand="block" onClick={loginComplete}>Sign in</IonButton>
                 <IonToast isOpen={isOpen} message="Succesfully logged in"
                     onDidDismiss={() => setIsOpen(false)}
                     duration={5000}>

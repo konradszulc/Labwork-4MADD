@@ -32,7 +32,7 @@
 }
 
 .placeholder {
-  max-width: 60%;
+  max-width: 80%;
   display: block;
   margin: 0 auto;
 }
@@ -63,4 +63,8 @@ margin: auto;
 .back-button {
     color: #FFD300;
     margin-left: 20px;          
+}
+
+.placeholder-padding {
+  padding-top: 200px;
 }

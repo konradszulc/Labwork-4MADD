@@ -56,6 +56,7 @@ const AddSnippet: React.FC = () => {
             </IonHeader>
 
             <IonContent className="ion-padding">
+                <div className='register-padding'></div>
                 <IonItem className='placeholder'>
                     <IonLabel position="stacked">TITLE</IonLabel>
                     <IonInput

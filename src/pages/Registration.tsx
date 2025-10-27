@@ -50,7 +50,7 @@ const Registration: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent className="ion-padding">
-
+            <div className='placeholder-padding'></div>
                 <IonItem className='placeholder'>
                     <IonInput placeholder="Enter Email" onIonChange={(e) => setEmail(e.detail.value!)}></IonInput>
                 </IonItem>
@@ -64,7 +64,7 @@ const Registration: React.FC = () => {
                 </IonItem>
                 <p className='register-account'>Already have an Account? <Link to = {`login`}>Click here</Link> to Login</p>
 
-                <IonButton className='submit hover' expand="block" onClick={registerComplete}>Submit</IonButton>
+                <IonButton className='submit hover' expand="block" onClick={registerComplete}>Sign up</IonButton>
 
                 <IonToast isOpen={isOpen} message="User Created Succesfully"
                     onDidDismiss={() => setIsOpen(false)}
